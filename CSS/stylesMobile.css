@@ -1,0 +1,266 @@
+/* 基本樣式 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0B0C10; /* 深藍黑色背景 */
+    color: #C5C6C7; /* 淡灰色文字 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 歡迎區域 */
+#welcome {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px; /* 調整圖片與文字區域之間的間距 */
+    background-image: url('../img/background.png'); /* 背景圖片 */
+    background-size: cover;
+    color: #FFF;
+    border-radius: 10px;
+    text-align: center; /* 文字居中 */
+}
+
+/* 卡片區域調整 */
+.card-container {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    align-items: center;
+    padding: 10px;
+    overflow-x: auto; /* 添加水平滾動 */
+}
+
+.card {
+    background-color: #1F2833;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    align-items: center;
+    width: 90%; /* 限制寬度為手機屏幕的90% */
+    max-width: 300px; /* 最大寬度設為300px */
+    margin-bottom: 20px; /* 卡片之間的間距 */
+    overflow: hidden; /* 隱藏超出區域的內容 */
+}
+
+.card img {
+    width: 100%; /* 圖片寬度填滿卡片 */
+    height: auto; /* 高度自動調整 */
+    border-radius: 10px; /* 圓角效果 */
+    margin-bottom: 10px; /* 圖片與文字之間的間距 */
+}
+
+.card .description {
+    color: #C5C6C7; /* 淡灰色文字 */
+}
+
+.card a {
+    display: block; /* 使連結佔據整個區域 */
+    padding: 10px;
+    background-color: #8d8faa; /* 按鈕背景色 */
+    color: #fff; /* 按鈕文字顏色 */
+    text-decoration: none;
+    border-radius: 5px; /* 圓角效果 */
+    text-align: center; /* 按鈕文字置中對齊 */
+    width: 100%; /* 按鈕寬度為100% */
+    margin-top: 10px; /* 按鈕與內容之間的間距 */
+}
+
+.card a:hover {
+    background-color: #926ccf; /* 按鈕懸停背景色 */
+    color: #1F2833; /* 懸停文字顏色 */
+}
+
+/* 左側導航欄 */
+h1 {
+    font-size: 36px;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #1F2833; /* 深灰藍色 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px; /* 縮小導航欄的寬度 */
+    height: 100%;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden; /* 隱藏超出容器的內容 */
+    transition: width 0.3s, padding 0.3s; /* 使展開和收起過渡效果更平滑 */
+}
+
+nav.expanded {
+    width: 200px; /* 展開時的寬度 */
+    padding: 10px; /* 展開時的內邊距 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 導航欄切換按鈕 */
+nav .toggle-btn {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #82e0da; /* 按鈕顏色 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: background-color 0.3s;
+}
+
+nav .toggle-btn:hover {
+    background-color: #45A29E; /* 按鈕懸停顏色 */
+}
+
+/* 導航欄中的列表 */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    opacity: 0; /* 隱藏文字 */
+    transition: opacity 0.3s; /* 文字顯示/隱藏過渡效果 */
+}
+
+nav.expanded ul {
+    opacity: 1; /* 展開時顯示文字 */
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    color: #82e0da; /* 藍綠色文字 */
+    text-decoration: none;
+    font-weight: bold;
+    display: block; /* 確保鏈接占據整個區域 */
+}
+
+nav ul li a:hover {
+    color: #45A29E; /* 略深的藍綠色 */
+}
+
+/* 主要內容區域 */
+main {
+    margin-left: 70px; /* 增加左邊距以適應導航欄 */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* 更加明顯的背景色 */
+    border-radius: 10px;
+}
+
+/* 精選展示區域 */
+#featured {
+    margin-top: 50px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#featured.visible {
+    opacity: 1;
+}
+
+.highlight {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    gap: 20px;
+}
+
+.highlight article {
+    background-color: #1F2833;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: row; /* 圖片在左，文字在右 */
+    align-items: center; /* 使圖片和文字垂直居中 */
+    width: 90%; /* 限制寬度為手機屏幕的90% */
+    max-width: 300px; /* 最大寬度設為300px */
+    margin: 0 auto; /* 確保卡片在容器中居中 */
+    overflow: hidden; /* 隱藏超出區域的內容 */
+}
+
+.highlight article img {
+    transition: transform 0.3s ease-in-out;
+    width: 40%; /* 圖片區域寬度 */
+    height: auto; /* 高度自動調整 */
+    border-radius: 10px; /* 圓角效果 */
+    border: 2px solid #605368; /* 灰色外框 */
+    background-color: #4d4d4d; /* 背景顏色 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 添加陰影效果 */
+    margin-right: 20px; /* 文字區域和圖片之間的間距 */
+}
+
+.highlight article:hover img {
+    transform: scale(1.05);
+}
+
+.highlight article:hover {
+    transform: translateY(-10px);
+}
+
+.highlight .description {
+    margin-top: 10px;
+    color: #C5C6C7; /* 淡灰色文字 */
+}
+
+.highlight a {
+    display: block; /* 使連結佔據整個區域 */
+    padding: 10px;
+    background-color: #8d8faa; /* 按鈕背景色 */
+    color: #fff; /* 按鈕文字顏色 */
+    text-decoration: none;
+    border-radius: 5px; /* 圓角效果 */
+    text-align: center; /* 按鈕文字置中對齊 */
+    width: 100%; /* 按鈕寬度為100% */
+    margin-top: 10px; /* 按鈕與內容之間的間距 */
+}
+
+.highlight a:hover {
+    background-color: #926ccf; /* 按鈕懸停背景色 */
+    color: #1F2833; /* 懸停文字顏色 */
+}
+
+/* 新增內容區域樣式示例 */
+#news {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #1F2833;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#news p {
+    margin: 0 0 10px; /* 調整段落間距 */
+    padding: 10px;
+    border-bottom: 1px solid #333; /* 底部邊框 */
+}
+
+#news a {
+    display: block; /* 讓每個超連結顯示為區塊，這樣可以讓它們獨立換行 */
+    margin: 0 0 10px; /* 調整超連結間距 */
+    color: #916caf; /* 連結顏色 */
+    text-decoration: none; /* 去掉下劃線 */
+}
+
+#news a:hover {
+    text-decoration: underline; /* 滑鼠懸停時顯示下劃線 */
+}
+
+#news h2 {
+    color: #66FCF1;
+}
+
+footer {
+    background-color: #1F2833;
+    color: #C5C6C7;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%; /* 跨越整個寬度 */
+    bottom: 0;
+    left: 0;
+}

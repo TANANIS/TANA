@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的學習記錄</title>
+    <link rel="stylesheet" href="CSS\stylesLearningDiary.css">
+    <script src="JS\LearningDiary.JS" defer></script>
+</head>
+<body>
+    <!-- 導覽列 -->
+    <nav>
+        <img src="img\BACKBTN-01-01.png" alt="BACKBTN" class="backBTN">
+        <h1>我的網站</h1>
+        <ul>
+            <li><a href="MainPage.html">首頁</a></li>
+            <li><a href="portfolio.html">過去作品</a></li>
+            <li><a href="LearningDiary.html">學習日誌</a></li>
+            <li><a href="viewport.html">學習資源推薦</a></li>
+            <li><a href="mini-games.html">迷你遊戲</a></li>
+            <li><a href="contact.html">聯絡</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主要內容區域 -->
+    <main>
+        <!-- 歡迎區域 -->
+        <section id="welcome">
+            <div class="welcome-text">
+                <h2>歡迎來到我的學習記錄網站</h2>
+                <p>這裡是我在學習過程中的一些記錄與分享，希望對你有幫助。</p>
+            </div>
+            <div class="welcome-image">
+                <img src="img/LearningDiaryHEAD.png" alt="Profile Image">
+            </div>
+        </section>
+
+        <!-- 個人資訊區塊 -->
+        <section class="profile-info">
+            <h2>學習記錄</h2>
+            <p>關於我的學習歷程，筆記/解釋/語法與註釋等等，都會在這裡更新。</p>
+            <a href="https://www.notion.so/d3c712265e744507b0f4fcabd235b345?pvs=4" class="profile-button">前往NOTION查看更多</a>
+        </section>
+
+        <!-- 精選展示區域 -->
+        <section id="featured" class="featured">
+            <h2>分頁內容</h2>
+            <div class="highlight">
+                <button class="featured-btn" onclick="location.href='LearningDiary/SQL.html'">SQL</button>
+                <button class="featured-btn" onclick="location.href='LearningDiary/HTML.html'">HTML</button>
+                <button class="featured-btn" onclick="location.href='LearningDiary/Python.html'">Python</button>
+                <button class="featured-btn" onclick="location.href='LearningDiary/unity.html'">Unity</button>
+                <button class="featured-btn" onclick="location.href='LearningDiary/csharp.html'">C#</button>
+            </div>
+        </section>
+
+        <!-- 最新消息區域 -->
+        <section id="news">
+            <h2>最新消息</h2>
+            <p>這裡是一些最新的筆記或更新。</p>
+            <a href="#">查看所有消息</a>
+            <div class="news-container">
+                <div class="news-item">
+                    <img src="img\WaitUpdate.png" alt="News Image" class="welcome-image">
+                    <h3>最新消息一</h3>
+                    <p>這是最新消息的介紹，這裡可以放一些有趣的內容。</p>
+                </div>
+                <div class="news-item">
+                    <img src="img\WaitUpdate.png" alt="News Image" class="welcome-image">
+                    <h3>最新消息二</h3>
+                    <p>這是最新消息的介紹，這裡可以放一些有趣的內容。</p>
+                </div>
+                <div class="news-item">
+                    <img src="img\WaitUpdate.png" alt="News Image" class="welcome-image">
+                    <h3>最新消息三</h3>
+                    <p>這是最新消息的介紹，這裡可以放一些有趣的內容。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁腳 -->
+    <footer>
+        <p>&copy; 2024 我的學習記錄網站。所有權利保留。</p>
+    </footer>
+</body>
+</html>

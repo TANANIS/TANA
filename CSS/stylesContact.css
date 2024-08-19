@@ -1,0 +1,419 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-position: center; /* 背景圖片置中 */
+  background-attachment: fixed; /* 固定背景圖，隨著內容滾動而移動 */
+  background-image: url("../img/background.png"); /* 背景圖片 */
+  background-size: cover;
+  color: #c5c6c7; /* 淡灰色文字 */
+  margin: 0;
+  padding: 0;
+  position: relative; /* 確保偽元素可以正確定位 */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit; /* 繼承背景圖片 */
+  filter: blur(8px) brightness(50%); /* 模糊和調暗背景圖片 */
+  z-index: -1; /* 將偽元素放置於其他內容之下 */
+}
+
+/* 左側導航欄 */
+h1 {
+  font-size: 36px;
+  margin: 0;
+  padding: 0;
+}
+nav {
+  background-color: #1f2833; /* 深灰藍色 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px; /* 縮回的寬度 */
+  height: 100%;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* 隱藏超出容器的內容 */
+  transition: width 0.3s, padding 0.3s; /* 使展開和收起過渡效果更平滑 */
+  z-index: 1000; /* 確保導航欄在其他內容之上 */
+}
+.backBTN {
+  top: 30px; /* 調整按鈕在導航欄上的位置 */
+  left: 10px; /* 調整水平位置 */
+  width: 40px; /* 按鈕的寬度 */
+  height: 50px; /* 按鈕的高度 */
+  cursor: pointer; /* 顯示指針光標 */
+  z-index: 101; /* 確保按鈕在導航欄上方 */
+}
+
+nav.expanded {
+  width: 250px; /* 展開的寬度 */
+  padding: 20px; /* 展開時的內邊距 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0; /* 隱藏文字 */
+  transition: opacity 0.3s; /* 文字顯示/隱藏過渡效果 */
+}
+nav.expanded ul {
+  opacity: 1; /* 展開時顯示文字 */
+}
+
+nav ul li {
+  margin: 20px 0;
+}
+
+nav ul li a {
+  color: #e0829e; /* 藍綠色文字 */
+  text-decoration: none;
+  font-weight: bold;
+  display: block; /* 確保鏈接占據整個區域 */
+}
+
+nav ul li a:hover {
+  color: #45a29e; /* 略深的藍綠色 */
+}
+/* 主要內容區域 */
+main {
+  margin-left: 270px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7); /* 更加明顯的背景色 */
+  border-radius: 10px;
+}
+
+/* 聯絡頁面樣式 */
+#contact {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #1f2833; /* 與主要內容區域一致的背景色 */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 與其他區域一致的陰影效果 */
+  color: #c5c6c7; /* 與全局文字顏色一致 */
+}
+
+/* 卡片容器 */
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap; /* 允許換行 */
+  gap: 20px; /* 卡片間距 */
+  justify-content: center; /* 中央對齊 */
+  padding: 20px;
+}
+
+/* 單張卡片 */
+.contact-card {
+  background-color: #665287; /* 淺藍色背景 */
+  border-radius: 15px; /* 圓角效果 */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 與其他區域一致的陰影效果 */
+  width: 300px; /* 調整卡片寬度 */
+  transition: transform 0.3s ease-in-out; /* 添加放大過渡效果 */
+}
+
+/* 卡片懸停效果 */
+.contact-card:hover {
+  transform: scale(1.05); /* 卡片放大效果 */
+}
+
+/* 卡片內容區 */
+.contact-card .contact-content {
+  display: flex;
+  align-items: center; /* 垂直居中對齊 */
+  text-align: left; /* 文字左對齊 */
+  height: 100%; /* 高度 100% */
+  overflow: hidden; /* 隱藏超出內容 */
+}
+
+/* 卡片圖片區 */
+.contact-card .contact-image {
+  width: 40%; /* 圖片區域寬度 */
+  margin-right: 20px; /* 文字區域和圖片之間的間距 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #4d4453; /* 灰色外框 */
+  border-radius: 10px; /* 圓角效果 */
+  overflow: hidden;
+  background-color: #4d4d4d; /* 背景顏色 */
+}
+
+/* 卡片圖片樣式 */
+.contact-card .contact-image img {
+  width: 100%; /* 圖片填滿圖片區域 */
+  height: auto; /* 自動調整高度以保持比例 */
+  border-radius: 8px; /* 圓角效果 */
+}
+
+/* 卡片文字區 */
+.contact-card .contact-text {
+  width: 60%; /* 文字區域寬度 */
+  display: flex;
+  flex-direction: column; /* 文字垂直排列 */
+  justify-content: center; /* 內容垂直居中 */
+}
+
+/* 卡片標題 */
+.contact-card .contact-text h2 {
+  margin: 10px 0;
+  color: #fff; /* 文字顏色 */
+  font-size: 1.2em; /* 標題字體大小 */
+}
+
+/* 卡片段落 */
+.contact-card .contact-text p {
+  color: #ddd; /* 文字顏色 */
+  line-height: 1.4;
+  margin: 5px 0;
+  font-size: 0.9em; /* 段落字體大小 */
+}
+
+/* 聯絡方式區域 */
+.contact-info {
+  position: relative; /* 確保偽元素可以正確定位 */
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #574f5d; /* 稍微深色的背景 */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 與其他區域一致的陰影效果 */
+  text-align: center; /* 置中顯示內容 */
+  overflow: hidden; /* 防止偽元素超出邊界 */
+}
+
+.contact-info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit; /* 繼承背景圖片 */
+  filter: blur(8px) brightness(50%); /* 模糊和調暗背景圖片 */
+  transform: scale(1.1); /* 放大背景圖片 */
+  z-index: -1; /* 將偽元素放置於其他內容之下 */
+  transition: transform 0.3s ease-in-out; /* 添加平滑的過渡效果 */
+}
+
+.contact-info:hover::before {
+  transform: scale(1.2); /* 鼠標懸停時進一步放大背景圖片 */
+}
+
+/* 聯絡信息標題 */
+.contact-info h2 {
+  margin-top: 0;
+  color: #66fcf1; /* 亮藍色文字 */
+  font-size: 1.5em; /* 調整標題字體大小 */
+}
+
+/* 聯絡信息內容 */
+.contact-info p {
+  margin: 10px 0; /* 調整段落間距 */
+  color: #c5c6c7; /* 淡灰色文字 */
+  font-size: 1em; /* 調整段落字體大小 */
+}
+
+/* 聯絡信息按鈕 */
+.contact-info a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #9166fc; /* 亮藍色 */
+  color: #0b0c10; /* 深色文字 */
+  text-decoration: none;
+  border-radius: 5px; /* 圓角效果 */
+  font-weight: bold; /* 加粗字體 */
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1em; /* 調整按鈕字體大小 */
+}
+
+.contact-info a:hover {
+  background-color: #45a29e; /* 深藍綠色 */
+  color: #fff; /* 白色文字 */
+}
+
+/* 聯絡按鈕縮放效果 */
+.contact-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #a28bde;
+  color: #0b0c10;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.contact-button.scale-up {
+  transform: scale(1.1); /* 放大效果 */
+}
+
+.contact-button:hover {
+  background-color: #45a29e;
+  color: #fff;
+}
+/* 留言區域 */
+#comments {
+  margin-top: 30px;
+  padding: 20px;
+  background: #1b1b1b; /* 深色背景 */
+  border-radius: 10px; /* 增加圓角 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* 更強的陰影效果 */
+}
+
+/* 標題 */
+#comments h2 {
+  margin-top: 0;
+  font-size: 2em; /* 增大標題字體 */
+  color: #00aaff; /* 藍色標題 */
+}
+
+/* 留言表單 */
+.comment-form {
+  position: relative; /* 使按鈕的絕對定位相對於這個區域 */
+  padding: 15px;
+  border: 1px solid #555; /* 更柔和的邊框顏色 */
+  border-radius: 10px; /* 增加圓角 */
+  background-color: #333; /* 深灰背景 */
+  margin-top: 20px;
+}
+
+/* 發佈留言按鈕 */
+.post-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 8px 15px;
+  background-color: #007bff; /* 藍色背景 */
+  color: #fff;
+  border: none;
+  border-radius: 8px; /* 增加圓角 */
+  cursor: pointer;
+  z-index: 10; /* 確保按鈕位於其他元素之上 */
+  font-size: 16px;
+}
+.post-button:hover {
+  background-color: #0056b3; /* 深藍色背景 */
+}
+
+/* 表單輸入 */
+.comment-form input,
+.comment-form textarea {
+  width: calc(100% - 100px); /* 留出按鈕空間 */
+  padding: 10px;
+  border: 1px solid #666; /* 更柔和的邊框顏色 */
+  border-radius: 8px; /* 圓角效果 */
+  background: #444; /* 深灰背景 */
+  color: #e0e0e0; /* 淺灰文字 */
+  box-sizing: border-box;
+  margin-bottom: 15px; /* 增加間距 */
+}
+
+/* 發佈按鈕 */
+.comment-form button {
+  padding: 10px 20px;
+  background-color: #00aaff; /* 藍色背景 */
+  color: white;
+  border: none;
+  border-radius: 8px; /* 圓角效果 */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.comment-form button:hover {
+  background-color: #007bb5; /* 深藍色背景 */
+  transform: scale(1.05);
+}
+
+/* 留言列表 */
+.comment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 留言卡片 */
+.comment-list .comment-card {
+  background: #444; /* 深灰背景 */
+  border-radius: 10px; /* 圓角效果 */
+  padding: 20px;
+  margin-bottom: 20px; /* 增加卡片間距 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* 增加陰影效果 */
+  position: relative; /* 確保 z-index 生效 */
+  z-index: 10; /* 增加層級 */
+}
+
+/* 留言卡片標題 */
+.comment-card .comment-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px; /* 增加間距 */
+  font-weight: bold;
+  color: #00aaff; /* 藍色文字 */
+}
+
+/* 留言內容 */
+.comment-card .comment-text {
+  margin-bottom: 15px; /* 增加間距 */
+}
+
+/* 回覆表單 */
+.reply-form {
+  margin-top: 15px; /* 增加間距 */
+}
+
+/* 回覆表單輸入框 */
+.reply-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #666; /* 更柔和的邊框顏色 */
+  border-radius: 10px; /* 圓角效果 */
+  background: #3e3e3e; /* 深灰背景 */
+  color: #e0e0e0; /* 淺灰文字 */
+  box-sizing: border-box;
+  margin-bottom: 15px; /* 增加間距 */
+}
+
+/* 發佈回覆按鈕 */
+.reply-form button {
+  padding: 10px 20px;
+  background-color: #28a745; /* 綠色背景 */
+  color: rgb(158, 158, 158);
+  border: none;
+  border-radius: 10px; /* 圓角效果 */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* 發佈回覆按鈕 hover 狀態 */
+.reply-form button:hover {
+  background-color: #218838; /* 深綠色背景 */
+  transform: scale(1.05);
+}
+
+/* 頁腳 */
+footer {
+  background-color: #1f2833;
+  color: #c5c6c7;
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #333; /* 添加上邊框 */
+}
+
+/* 頁腳間距 */
+.footer-spacing {
+  height: 100px; /* 確保 footer 不遮擋內容 */
+  z-index: 1000; /* 調整 z-index */
+}

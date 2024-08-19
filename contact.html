@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯絡</title>
+    <link rel="stylesheet" href="CSS/stylesContact.css">
+    <script src="JS\Contact.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <img src="img/BACKBTN-01-01.png" alt="backBTN" class="backBTN">
+        <h1>聯絡資訊</h1>
+        <ul>
+            <li><a href="MainPage.html">首頁</a></li>
+            <li><a href="portfolio.html">過去作品</a></li>
+            <li><a href="LearningDiary.html">學習日誌</a></li>
+            <li><a href="viewport.html">學習資源推薦</a></li>
+            <li><a href="mini-games.html">迷你遊戲</a></li>
+            <li><a href="contact.html">聯絡</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="contact">
+            <h2>聯絡方式</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <img src="img\CONCACT\PIXIV.png" alt="PIXIV" class="contact-image">
+                    <h3>加入PIXIV看更多作品</h3>
+                    <a href="https://www.example.com" target="_blank" class="contact-button">前往網站</a>
+                </div>
+                <div class="contact-card">
+                    <img src="img\CONCACT\X.jpg" alt="社群2" class="contact-image">
+                    <h3>追蹤我的X看個人社群</h3>
+                    <a href="https://www.example.com" target="_blank" class="contact-button">前往網站</a>
+                </div>
+                <div class="contact-card">
+                    <img src="img\CONCACT\DISCORD.png" alt="社群3" class="contact-image">
+                    <h3>進入Discord結交更多朋友</h3>
+                    <a href="https://www.example.com" target="_blank" class="contact-button">前往網站</a>
+                </div>
+                <div class="contact-card">
+                    <img src="img\CONCACT\PODCAST.jpg" alt="社群3" class="contact-image">
+                    <h3>聽我們聊聊遊戲</h3>
+                    <a href="https://www.example.com" target="_blank" class="contact-button">前往網站</a>
+                </div>
+                <!-- 可以添加更多社群按鈕 -->
+            </div>
+
+            <div class="contact-info">
+                <p><strong>電子郵件：</strong><a href="zhitai012@gmail.com">zhitai012@gmail.com</a></p>
+                <p><strong>電話：</strong>0912-345-678</p>
+            </div>
+            <!-- 留言評論專區 -->
+            <section id="comments">
+                <h2>留言區</h2>
+                <div class="comment-form">
+                    <input type="text" id="commentName" placeholder="你的名字">
+                    <textarea id="commentText" placeholder="留言內容..."></textarea>
+                    <button onclick="postComment()" class="post-button">發佈留言</button>
+                </div>
+                <div class="comment-list">
+                    <!-- 留言卡片將會插入在這裡 -->
+                </div>
+            </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 版權所有.</p>
+    </footer>
+</body>
+
+</html>

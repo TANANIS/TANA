@@ -1,0 +1,155 @@
+/* 全局樣式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0B0C10;
+    color: #eee; /* 文字顏色 */
+    
+}
+
+/* 左側導航欄 */
+h1
+{
+    font-size: 36px;
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-color: #1F2833; /* 深灰藍色 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70px; /* 縮回的寬度 */
+    height: 100%;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden; /* 隱藏超出容器的內容 */
+    transition: width 0.3s, padding 0.3s; /* 使展開和收起過渡效果更平滑 */
+    z-index: 1000; /* 確保導航欄在其他內容之上 */
+}
+.backBTN {
+    top: 30px; /* 調整按鈕在導航欄上的位置 */
+    left: 10px; /* 調整水平位置 */
+    width: 40px; /* 按鈕的寬度 */
+    height: 50px; /* 按鈕的高度 */
+    cursor: pointer; /* 顯示指針光標 */
+    z-index: 101; /* 確保按鈕在導航欄上方 */
+}
+
+nav.expanded {
+    width: 250px; /* 展開的寬度 */
+    padding: 20px; /* 展開時的內邊距 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    opacity: 0; /* 隱藏文字 */
+    transition: opacity 0.3s; /* 文字顯示/隱藏過渡效果 */
+}
+nav.expanded ul {
+    opacity: 1; /* 展開時顯示文字 */
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    color: #82e0da; /* 藍綠色文字 */
+    text-decoration: none;
+    font-weight: bold;
+    display: block; /* 確保鏈接占據整個區域 */
+}
+
+nav ul li a:hover {
+    color: #45A29E; /* 略深的藍綠色 */
+}
+
+/* 主內容樣式 */
+main {
+    margin-top: 60px; /* 留出導覽列的空間 */
+    padding: 20px;
+}
+
+/* 歡迎區域樣式 */
+#welcome {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#welcome .welcome-text {
+    margin-bottom: 20px;
+}
+
+#welcome h2 {
+    font-size: 24px;
+}
+
+#welcome p {
+    font-size: 18px;
+}
+
+/* 遊戲區域樣式 */
+#game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#game-canvas {
+    border: 2px solid #fff; /* 蛇蛇遊戲畫布邊框 */
+    background-color: #161616; /* 遊戲區域背景色 */
+}
+
+#score-board {
+    position: fixed; /* 固定位置 */
+    right: 20px; /* 距離左邊 20px */
+    top: 50%; /* 垂直居中 */
+    transform: translateY(-50%); /* 垂直居中對齊 */
+    padding: 10px;
+    background: linear-gradient(to bottom, #414453 0%, #231e3a 100%);
+    border: 1px solid #ccc; /* 邊框樣式 */
+    border-radius: 5px; /* 邊角圓潤 */
+    text-align: center; /* 文字居中 */
+    z-index: 9999; /* 確保區域在其他元素之上 */
+}
+
+
+#score-board p {
+    font-size: 18px;
+}
+
+#start-btn {
+    position: fixed; /* 固定位置 */
+    right: 100px; /* 距離左邊 20px */
+    top: 50%; /* 垂直居中 */
+    transform: translateY(-50%); /* 垂直居中對齊 */
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px; /* 邊角圓潤 */
+    cursor: pointer;
+    z-index: 9999; /* 確保按鈕在其他元素之上 */
+    background-color: #9673a3; /* 按鈕背景色 */
+}
+
+
+#start-btn:hover {
+    background-color: #ccbf75; /* 按鈕懸停顏色 */
+}
+
+/* 頁腳樣式 */
+footer {
+    background-color: #000; /* 頁腳背景色 */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
