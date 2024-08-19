@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    overflow: hidden;
+  }
+  
+  .Celebrate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .celebrate-btn {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border: none;
+    background-color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  /* .confetti { */
+  .celebrate{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1000;
+    overflow: hidden;
+  }
+  
+  /* .confetti-piece { */
+.celebrate-piece {
+
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff0;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+  }
+  

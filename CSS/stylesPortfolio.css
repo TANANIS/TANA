@@ -9,6 +9,7 @@ body {
   color: #c5c6c7; /* 淡灰色文字 */
   margin: 0;
   padding: 0;
+  margin-left: 10%;
 }
 h1 {
   margin: 20px 0; /* 增加標題的外邊距 */
@@ -173,8 +174,8 @@ nav ul li a:hover {
   padding: 20px;
   background-color: #1b1b1b; /* 深色背景與其他區域一致 */
   border-radius: 10px; /* 圓角效果 */
-  width: 80%; /* 設定寬度，根據需要調整 */
-  max-width: 1200px; /* 最大寬度限制 */
+  width: 90%; /* 設定寬度，根據需要調整 */
+  max-width: 1800px; /* 最大寬度限制 */
   text-align: center;
 }
 
